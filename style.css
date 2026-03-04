@@ -54,7 +54,6 @@ h3 {
     padding: 0 2rem;
 }
 
-/* Header & Nav */
 header {
     position: fixed;
     top: 0;
@@ -82,7 +81,6 @@ nav {
     width: 50px;
     object-fit: cover;
     border-radius: 50%;
-    /* Make it circular as requested for "curved edges" */
     transition: var(--transition);
     border: 1px solid var(--glass-border);
 }
@@ -110,7 +108,6 @@ nav {
     color: var(--primary);
 }
 
-/* Hero Section */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -121,7 +118,6 @@ nav {
     overflow: hidden;
 }
 
-/* Consolidated video background logic moved to bottom */
 
 .hero-background-overlay {
     position: absolute;
@@ -131,7 +127,6 @@ nav {
     height: 100%;
     background: radial-gradient(circle at center, rgba(10, 10, 12, 0.4) 0%, rgba(10, 10, 12, 0.9) 100%);
     z-index: -1;
-    /* Layer above video, below content */
     pointer-events: none;
 }
 
@@ -150,11 +145,8 @@ nav {
     z-index: 1;
 }
 
-/* Add project image styling further down */
-
 .hero-title {
     font-size: clamp(2.5rem, 8vw, 5.5rem);
-    /* Decreased slightly */
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -174,7 +166,6 @@ nav {
     margin: 0 auto 2.5rem;
 }
 
-/* Contact Section */
 .contact-card {
     padding: 4rem;
     text-align: center;
@@ -211,7 +202,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* Base Buttons */
 .btn {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -245,8 +235,6 @@ nav {
     background: var(--bg-card);
     border-color: var(--primary);
 }
-
-/* Glassmorphism Cards */
 .glass {
     background: var(--bg-card);
     backdrop-filter: blur(10px);
@@ -256,10 +244,8 @@ nav {
     transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), border-color 0.4s, box-shadow 0.4s;
     will-change: transform;
     transform: translateZ(0);
-    /* Force GPU */
 }
 
-/* Section Common */
 section {
     padding: 100px 0;
 }
@@ -289,7 +275,6 @@ section {
     will-change: filter;
 }
 
-/* Background Shapes */
 .hero-background {
     position: absolute;
     top: 0;
@@ -333,7 +318,6 @@ section {
     }
 }
 
-/* About Section with Video */
 .about-section {
     position: relative;
     padding: 100px 0;
@@ -341,7 +325,6 @@ section {
     min-height: 80vh;
 }
 
-/* Global Video Background Logic handles this */
 
 .about-content {
     position: relative;
@@ -366,11 +349,9 @@ section {
     z-index: 1;
 }
 
-/* Section Title Glow (Globalized) */
 
 .about-text p {
     color: #333;
-    /* Dark Grey as requested */
     font-weight: 500;
     transition: var(--transition);
     transform-origin: left center;
@@ -385,14 +366,12 @@ section {
 .about-text p:hover,
 .racing-content p:hover {
     color: var(--secondary);
-    /* Intensified Glowing Cyan */
     text-shadow:
         0 0 10px #00f2fe,
         0 0 20px #00f2fe,
         0 0 40px rgba(0, 242, 254, 0.8),
         0 0 60px rgba(0, 242, 254, 0.4);
     transform: scale(1.08);
-    /* Slightly bigger */
     z-index: 10;
 }
 
@@ -513,8 +492,6 @@ section {
     animation: slideFromRight 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* Racing Section */
-/* Racing Section with Video */
 .racing-section {
     position: relative;
     padding: 100px 0;
@@ -567,7 +544,6 @@ section {
     min-height: 100vh;
 }
 
-/* Global Video Background Logic handles this */
 
 .tech-grid {
     display: grid;
@@ -638,7 +614,6 @@ section {
     transform: perspective(1000px);
 }
 
-/* Projects Section */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -723,7 +698,6 @@ section {
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s, box-shadow 0.5s, border-color 0.4s;
     will-change: transform, opacity;
     opacity: 0;
-    /* Start invisible */
 }
 
 .social-card.from-left {
@@ -828,7 +802,6 @@ section {
     text-shadow: 0 0 15px #10b981;
 }
 
-/* Footer Socials */
 .footer-socials {
     display: flex;
     justify-content: center;
@@ -855,16 +828,12 @@ footer {
     background: rgba(10, 10, 12, 0.9);
 }
 
-/* BEGIN PREMIUM RESPONSIVENESS */
-
-/* Tablet & Smaller Desktop (1024px) */
 @media (max-width: 1024px) {
     .container { padding: 0 1.5rem; }
     .about-grid, .racing-grid { gap: 2rem; }
     .tech-grid { gap: 2rem; max-width: 900px; }
 }
 
-/* TABLET_FIX */
 @media (max-width: 768px) {
     header { padding: 0.8rem 0; }
     nav { flex-direction: row; justify-content: space-between; }
@@ -882,7 +851,6 @@ footer {
     .links-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 }
 
-/* MOBILE_FIX */
 @media (max-width: 480px) {
     header { padding: 0.5rem 0; }
     .container { padding: 0 1rem; }
@@ -905,7 +873,6 @@ footer {
     .links-grid { grid-template-columns: 1fr 1fr; width: 100%; max-width: 320px; margin: 0 auto; }
     video { pointer-events: none; }
     
-    /* Hard Center Reset for Animations */
     .tech-card, .social-card { 
         transform: translateX(0) !important; 
         opacity: 1 !important; 
@@ -914,7 +881,6 @@ footer {
     }
 }
 
-/* Tiny Mobile (340px) */
 @media (max-width: 340px) {
     .nav-links { gap: 0.3rem; }
     .nav-links a { font-size: 0.5rem; }

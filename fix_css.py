@@ -56,7 +56,6 @@ def fix_css():
 }
 """
     
-    # Simple split and rebuild
     head = content.split('/* TABLET_FIX */')[0]
     
     new_content = head + tablet_section + mobile_section

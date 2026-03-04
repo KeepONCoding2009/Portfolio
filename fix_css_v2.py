@@ -5,11 +5,9 @@ def fix_css_final():
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # 1. Global Overflow Fix (at the top)
     if 'overflow-x: hidden;' not in content[:500]:
         content = content.replace('body {', 'html, body {\n    overflow-x: hidden;\n    max-width: 100%;\n}\n\nbody {', 1)
 
-    # 2. Refined Responsiveness Block
     premium_responsiveness = """/* BEGIN PREMIUM RESPONSIVENESS */
 
 /* Tablet & Smaller Desktop (1024px) */
@@ -77,7 +75,6 @@ def fix_css_final():
     .btn { padding: 0.6rem 0.9rem; font-size: 0.7rem; }
 }"""
 
-    # Split and rebuild
     head = content.split('/* BEGIN PREMIUM RESPONSIVENESS */')[0]
     new_content = head + premium_responsiveness
     
